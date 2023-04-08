@@ -1,225 +1,221 @@
 <html>
-<!-- This code suck pls don't do this -->
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="theme-color" content="DodgerBlue">
-	<title>Online URL Video Player </title>
-	<style>
-	input[type=text], select {
-    width: 75%;
-    max-width:400px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+  <!-- This code is suc pls don't do whatever you waant to do -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="DodgerBlue" />
+    <title>Online URL Video Player</title>
+    <style>
+      input[type="text"],
+      select {
+        width: 75%;
+        max-width: 400px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-button {
-    width: 20%;
-    background-color: rgb(117, 117, 247);
-    color: rgb(119, 202, 184);
-    max-width:150px;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-h1 { color: DodgerBlue; font-family: 'Raleway',sans-serif; font-size: 42px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
-#player
-{
-    max-width:720px;
-    min-height:200px;
-}
-	</style>
-<style>
-    body {
-      padding: 25px;
-      background-color: white;
-      color: black;
-      font-size: 25px;
-    }
-    
-    .dark-mode {
-      background-color: black;
-      color: white;
-    }
+      button {
+        width: 20%;
+        background-color: rgb(117, 117, 247);
+        color: rgb(119, 202, 184);
+        max-width: 150px;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      h1 {
+        color: DodgerBlue;
+        font-family: "Raleway", sans-serif;
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 72px;
+        margin: 0 0 24px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #player {
+        max-width: 720px;
+        min-height: 200px;
+      }
     </style>
-</head>
+    <style>
+      body {
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+      }
 
-<body>
-<center>
-<br>
-	<h1> Easy Nutto Player </h1>
-	<input type="text" placeholder="Paste your url here" id="vid" name="vid"  autocomplete="off" maxlength="400" >
-    <button onclick="return play()">Play!</button>
-	<br><br>
-	<video controls= "controls" id="player" tabindex="0" poster="thumb_2.png" autoplay="autoplay" loop="loop" src="" width="100%" >
-		</video>
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
 
-        <body id="body">
-            <div>
-          
-            <!-- Quote Box -->
-            <div class="block text-center">
-          
-              <!-- Front part of the Quote Box -->
-            <div class = "quote-box block__main block__front">
-          
+  <body>
+    <center>
+      <br />
+      <h1>Easy Nutto Player</h1>
+      <input
+        type="text"
+        placeholder="Paste your url here"
+        id="vid"
+        name="vid"
+        autocomplete="off"
+        maxlength="400"
+      />
+      <button onclick="return play()">Play!</button>
+      <br /><br />
+      <video
+        controls="controls"
+        id="player"
+        tabindex="0"
+        poster="thumb_2.png"
+        autoplay="autoplay"
+        loop="loop"
+        src=""
+        width="100%"
+      ></video>
+
+      <body id="body">
+        <div>
+          <!-- Quote Box -->
+          <div class="block text-center">
+            <!-- Front part of the Quote Box -->
+            <div class="quote-box block__main block__front">
               <!-- Quote to be Displayed Here -->
-              <span class = "quote">
-                  
+              <span class="quote">
                 <!-- Hyphen is Displayed  -->
                 <i class="fas fa-2x fa-quote-left"></i>
-          
+
                 <!-- Quote Text -->
-                <span class = "text">
-                ERR - QUOTES
-                </span>
-          
+                <span class="text"> ERR - QUOTES </span>
               </span>
-                
+
               <!-- Author to be Displayed Here -->
-              <div class = "author">
-                ERR - Authors
-              </div>
+              <div class="author">ERR - Authors</div>
             </div>
           </div>
         </div>
-            
-          <!-- Linking Your JavaScript File -->
-          <script src="script.js"></script>
-          </body>
-          <body>
-            
-            <button onclick="myFunction()">Toggle dark mode</button>
-            
-            <script>
-            function myFunction() {
-               var element = document.body;
-               element.classList.toggle("dark-mode");
-            }
-            </script>
-            
-            </body>
-</center>
-<script>var data;
-    let front = true;
-      
-    // Getting the front and the back author boxes
-    const authors = document.querySelectorAll(".author");
-      
-    // Getting the front and the back texts
-    const texts = document.querySelectorAll(".text");
-      
-    // Getting the body
-    const body = document.getElementById("body");
-      
-    // Getting the buttons
-    const button = document.querySelectorAll(".new-quote");
-      
-    const blockFront = document.querySelector(".block__front");
-    const blockBack = document.querySelector(".block__back");
-      
-    const authorFront = authors[0];
-    const authorBack = authors[1];
-      
-    const textFront = texts[0];
-    const textBack = texts[1];
-      
-    const buttonFront = button[0];
-    const buttonBack = button[1];
-      
-      
-    // An arrow function used to get a quote randomly
-    const displayQuote = () =>{
-      
-        // Generates a random number between 0 
+
+        <!-- Linking Your JavaScript File -->
+        <script src="script.js"></script>
+      </body>
+      <body>
+        <button onclick="myFunction()">Toggle dark mode</button>
+
+        <script>
+          function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+          }
+        </script>
+      </body>
+    </center>
+    <script>
+      var data;
+      let front = true;
+
+      // Getting the front and the back author boxes
+      const authors = document.querySelectorAll(".author");
+
+      // Getting the front and the back texts
+      const texts = document.querySelectorAll(".text");
+
+      // Getting the body
+      const body = document.getElementById("body");
+
+      // Getting the buttons
+      const button = document.querySelectorAll(".new-quote");
+
+      const blockFront = document.querySelector(".block__front");
+      const blockBack = document.querySelector(".block__back");
+
+      const authorFront = authors[0];
+      const authorBack = authors[1];
+
+      const textFront = texts[0];
+      const textBack = texts[1];
+
+      const buttonFront = button[0];
+      const buttonBack = button[1];
+
+      // An arrow function used to get a quote randomly
+      const displayQuote = () => {
+        // Generates a random number between 0
         // and the length of the dataset
-        let index = Math.floor(Math.random()*data.length);
-      
+        let index = Math.floor(Math.random() * data.length);
+
         // Stores the quote present at the randomly generated index
         let quote = data[index].quote;
-      
+
         // Stores the author of the respective quote
         let author = data[index].author;
-      
-        // Making the author anonymous if no author is present
-        if(!author){
-            author = "Anonymous"
-        }
-      
-        // Replacing the current quote and the author with a new one
-      
-        if(front){
-            // Changing the front if back-side is displayed
-            textFront.innerHTML = quote;
-            authorFront.innerHTML = author;
-        }else{
-            // Changing the back if front-side is displayed
-            textBack.innerHTML = quote;
-            authorBack.innerHTML = author;
-        }
-          
-        front = !front;
-      
-    }
-      
-    // Fetching the quotes from the type.fit API using promises
-    fetch("https://api.api-ninjas.com/v1/quotes?category=life",{headers: { 'X-Api-Key': 'V+RiMAVq6XIyvgZtuwXtlw==HXXiZHrBKQoGXb1f'}})
-        .then(function(response) {
-            return response.json(); 
-        }) // Getting the raw JSON data
-        .then(function(data) {
 
-            this.data = data; 
-      
-            // Displaying the quote When the Webpage loads
-            displayQuote() 
-    });
-      
-      
-    // Adding an onclick listener for the button
-    function newQuote(){
-          
+        // Making the author anonymous if no author is present
+        if (!author) {
+          author = "Anonymous";
+        }
+
+        // Replacing the current quote and the author with a new one
+
+        if (front) {
+          // Changing the front if back-side is displayed
+          textFront.innerHTML = quote;
+          authorFront.innerHTML = author;
+        } else {
+          // Changing the back if front-side is displayed
+          textBack.innerHTML = quote;
+          authorBack.innerHTML = author;
+        }
+
+        front = !front;
+      };
+
+      // Fetching the quotes from the type.fit API using promises
+      fetch("https://api.api-ninjas.com/v1/quotes?category=life", {
+        headers: { "X-Api-Key": "V+RiMAVq6XIyvgZtuwXtlw==HXXiZHrBKQoGXb1f" },
+      })
+        .then(function (response) {
+          return response.json();
+        }) // Getting the raw JSON data
+        .then(function (data) {
+          this.data = data;
+
+          // Displaying the quote When the Webpage loads
+          displayQuote();
+        });
+
+      // Adding an onclick listener for the button
+      function newQuote() {
         // Rotating the Quote Box
-        blockBack.classList.toggle('rotateB');
-        blockFront.classList.toggle('rotateF');
-      
+        blockBack.classList.toggle("rotateB");
+        blockFront.classList.toggle("rotateF");
+
         // Displaying a new quote when the webpage loads
         displayQuote();
-    }</script>
-<script>
-
-<style>
-body {
-  padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 25px;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-</style>
-
-function play()
-{
-	var qry=document.getElementById("vid").value;
-	if(qry==null)
-	{
-		alert("Enter URL First!")
-	}
-	else
-	{
-		document.getElementById("player").src=qry;
-	}
-}
-</script>
-</body>
+      }
+    </script>
+    <script>
+      function play()
+      {
+      	var qry=document.getElementById("vid").value;
+      	if(qry==null)
+      	{
+      		alert("Enter URL First!")
+      	}
+      	else
+      	{
+      		document.getElementById("player").src=qry;
+      	}
+      }
+    </script>
+  </body>
 </html>
